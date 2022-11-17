@@ -70,7 +70,7 @@ public class ReindexCommand {
 			companyIds[0] = companyId;
 			String jobName = "reindex." + companyId + "." + className;
 			Map<String, Serializable> taskContextMap = new HashMap<>();
-			BackgroundTask task = _indexWriterHelper.reindex(userId, jobName, companyIds, taskContextMap);
+			BackgroundTask task = _indexWriterHelper.reindex(userId, jobName, companyIds, className, taskContextMap);
 			System.out.println("     => Creating task " + task.getName());
 		} catch (SearchException e) {
 			System.out.println("   /!\\ Failed to reindex " + className + " for company " + companyId);
